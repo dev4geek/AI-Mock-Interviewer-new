@@ -22,6 +22,6 @@ def evaluate():
 
     return render_template('index.html', question=question, feedback=feedback)
 
-# Vercel entry
-def handler(environ, start_response):
+# ❗ Vercel WSGI entry (IMPORTANT)
+def app_handler(environ, start_response):
     return app(environ, start_response)
