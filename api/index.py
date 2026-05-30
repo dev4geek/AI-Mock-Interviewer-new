@@ -21,7 +21,3 @@ def evaluate():
         feedback = "Excellent answer."
 
     return render_template('index.html', question=question, feedback=feedback)
-
-# ❗ Vercel WSGI entry (IMPORTANT)
-def app_handler(environ, start_response):
-    return app(environ, start_response)
