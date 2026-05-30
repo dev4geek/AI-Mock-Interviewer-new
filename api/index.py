@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(__name__)
 
 question = "What is Machine Learning?"
 
@@ -16,8 +16,12 @@ def evaluate():
     if score < 10:
         feedback = "Answer is too short. Add more details."
     elif score < 30:
-        feedback = "Good answer. Try adding examples."
+        feedback = "Good answer. Try examples."
     else:
         feedback = "Excellent answer."
 
     return render_template('index.html', question=question, feedback=feedback)
+
+# IMPORTANT for Vercel
+if __name__ == "__main__":
+    app.run()
