@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 question = "What is Machine Learning?"
+if __name__ == "__main__":
+    app.run()
 
 @app.route('/')
 def home():
