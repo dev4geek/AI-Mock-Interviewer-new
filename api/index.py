@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
 question = "What is Machine Learning?"
 
@@ -20,4 +20,12 @@ def evaluate():
     else:
         feedback = "Excellent answer."
 
-    return render_template('index.html', question=question, feedback=feedback)
+    return render_template(
+        'index.html',
+        question=question,
+        feedback=feedback
+    )
+
+# Vercel entry point
+def handler(environ, start_response):
+    return app(environ, start_response)

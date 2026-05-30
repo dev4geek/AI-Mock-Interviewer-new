@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>AI Mock Interviewer</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 
 <body>
@@ -13,34 +13,19 @@
     <h1>AI Mock Interviewer</h1>
 
     <h2>Question</h2>
-
     <p>{{ question }}</p>
 
     <form action="/evaluate" method="POST">
-
-        <textarea
-        name="answer"
-        placeholder="Type your answer..."
-        required></textarea>
-
+        <textarea name="answer" placeholder="Type your answer..." required></textarea>
         <br>
-
-        <button type="submit">
-            Submit Answer
-        </button>
-
+        <button type="submit">Submit Answer</button>
     </form>
 
     {% if feedback %}
-
     <div class="feedback">
-
         <h3>Feedback</h3>
-
         <p>{{ feedback }}</p>
-
     </div>
-
     {% endif %}
 
 </div>
