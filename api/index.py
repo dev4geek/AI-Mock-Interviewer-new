@@ -22,6 +22,6 @@ def evaluate():
 
     return render_template('index.html', question=question, feedback=feedback)
 
-# 🔥 REQUIRED FOR VERCEL
-def handler(event, context):
-    return app
+# Vercel entry
+def handler(environ, start_response):
+    return app(environ, start_response)
