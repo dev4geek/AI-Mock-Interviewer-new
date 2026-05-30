@@ -1,6 +1,13 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Flask is running!"
 
 question = "What is Machine Learning?"
 
